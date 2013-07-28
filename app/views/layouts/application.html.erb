@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Memor</title>
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<h1><a href="/"><img src="/logo.png" alt="Memor" title="Memor"/></a></h1>
+	
+<%= yield %>
+
+</body>
+</html>

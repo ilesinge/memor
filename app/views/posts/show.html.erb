@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>URL: <%= @post.url %></p>
+<p>Title: <%= @post.title %></p>
+<p>Description:
+<%= @post.description %></p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

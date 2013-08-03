@@ -15,6 +15,13 @@
 	<% else %>
   		<%= link_to('Login', new_user_session_path)  %>
 	<% end %>
+	
+	<% if notice %>
+  		<p class="notice"><%= notice %></p>
+	<% end %>
+	<% if alert %>
+		<p class="error"><%= alert %></p>
+	<% end %>
 
 <%= yield %>
 

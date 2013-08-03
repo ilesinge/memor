@@ -7,12 +7,16 @@ RailsAdmin.config do |config|
   ################  Global configuration  ################
 
   # Set the admin name here (optional second array element will appear in red). For example:
-  config.main_app_name = ['Default', 'Admin']
+  config.main_app_name = ['Memor', 'Admin']
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_user } # auto-generated
+    
+  config.authorize_with do
+    redirect_to main_app.posts_path unless warden.user.is_admin?
+  end
 
   # If you want to track changes on your models:
   # config.audit_with :history, 'User'

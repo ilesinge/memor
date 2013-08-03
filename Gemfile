@@ -24,6 +24,9 @@ gem 'simple_form'
 # Admin !
 gem 'rails_admin'
 
+# URL validator
+gem "validate_url"
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 #gem 'jbuilder', '~> 1.2'
 

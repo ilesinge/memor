@@ -15,7 +15,7 @@ RailsAdmin.config do |config|
   config.current_user_method { current_user } # auto-generated
     
   config.authorize_with do
-    redirect_to main_app.posts_path unless warden.user.is_admin?
+    redirect_to main_app.root_path unless warden.user.is_admin?
   end
 
   # If you want to track changes on your models:

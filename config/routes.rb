@@ -1,9 +1,10 @@
 Default::Application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  
   resources :posts, path: '/'
-
-  #root 'posts#index'
+  root 'posts#index'
+  
   #resources :posts
   
   # The priority is based upon order of creation: first created -> highest priority.

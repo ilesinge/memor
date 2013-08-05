@@ -3,6 +3,7 @@ SimpleForm.setup do |config|
   # Components used by the form builder to generate a complete input. You can remove
   # any of them, change the order, or even add your own components to the stack.
   # config.components = [ :placeholder, :label_input, :hint, :error ]
+  config.components = [ :label, :contained_input ]
 
   # Default tag used on hints.
   # config.hint_tag = :span
@@ -12,6 +13,7 @@ SimpleForm.setup do |config|
 
   # CSS class used on errors.
   # config.error_class = :error
+  SimpleForm.error_class = 'help-inline'
 
   # Default tag used on errors.
   # config.error_tag = :span
@@ -33,9 +35,11 @@ SimpleForm.setup do |config|
 
   # CSS class to add to all wrapper tags.
   # config.wrapper_class = :input
+  SimpleForm.wrapper_class = 'control-group'
 
   # CSS class to add to the wrapper if the field has errors.
   # config.wrapper_error_class = :field_with_errors
+  SimpleForm.wrapper_error_class = 'error'
 
   # You can wrap a collection of radio/check boxes in a pre-defined tag, defaulting to none.
   # config.collection_wrapper_tag = nil
@@ -54,9 +58,11 @@ SimpleForm.setup do |config|
 
   # You can define the class to use on all labels. Default is nil.
   # config.label_class = nil
+  SimpleForm.label_class = 'control-label'
 
   # You can define the class to use on all forms. Default is simple_form.
   # config.form_class = :simple_form
+  SimpleForm.form_class = 'form-horizontal'
 
   # Whether attributes are required by default (or not). Default is true.
   # config.required_by_default = true
@@ -90,4 +96,6 @@ SimpleForm.setup do |config|
 
   # When false, do not use translations for labels, hints or placeholders.
   # config.translate = true
+  
+  require 'simple_form/contained_input_component.rb'
 end

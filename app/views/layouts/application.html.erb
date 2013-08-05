@@ -2,28 +2,33 @@
 <html>
 <head>
   <title>Memor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/logo.png" />
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<h1><a href="/"><img src="/logo.png" alt="Memor" title="Memor"/></a></h1>
-	
-	<% if user_signed_in? %>
-  		<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-	<% else %>
-  		<%= link_to('Login', new_user_session_path)  %>
-	<% end %>
-	
-	<% if notice %>
-  		<p class="notice"><%= notice %></p>
-	<% end %>
-	<% if alert %>
-		<p class="error"><%= alert %></p>
+
+	<%= nav_bar :responsive => true,
+			:brand => image_tag('logo.png', :size => '30x30', :alt => 'Memor') + 'Memor' do %>
+		
+		<%= menu_group :pull => :right do %>
+			<% if user_signed_in? %>
+		  		<%= menu_item 'Logout', destroy_user_session_path, :method => :delete %>        
+			<% else %>
+		  		<%= menu_item 'Login', new_user_session_path %>
+			<% end %>
+		<% end %>
+			
 	<% end %>
 
-<%= yield %>
+	<div class="container">
+	
+		<%= bootstrap_flash %>
+	
+		<%= yield %>
+	</div>
 
 </body>
 </html>

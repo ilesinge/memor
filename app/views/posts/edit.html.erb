@@ -2,5 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<div class="btn-group">
+	<%= link_to glyph("chevron-left"), posts_path, title: 'Back', class: "btn btn-primary" %>
+	<%= link_to glyph('eye-open'), @post, title: 'Show', class: "btn btn-info" %>
+</div>

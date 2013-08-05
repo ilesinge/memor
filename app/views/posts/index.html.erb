@@ -1,6 +1,6 @@
 <h2>Listing posts</h2>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
@@ -15,11 +15,16 @@
       	<td><%= link_to post.title, post.url %></td>
       	<td><%= post.description %></td>
         <td>
-        	<%= link_to 'Show', post %>
-        	<% if user_signed_in? %>
-        		<%= link_to 'Edit', edit_post_path(post) %>
-        		<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-        	<% end %>
+        	<div class="btn-group">
+	        	<%= link_to glyph('eye-open'), post, title: 'Show', class: "btn btn-info" %>
+	        	<% if user_signed_in? %>
+	        		<%= link_to glyph('pencil'), edit_post_path(post), title: 'Edit',
+	        			class: "btn btn-inverse" %>
+	        		<%= link_to glyph('trash'), post, method: :delete, title: 'Delete',
+	        			data: { confirm: 'Are you sure you want to delete "' + post.title + '" ?' },
+	        			class: "btn btn-danger" %>
+	        	<% end %>
+	        </div>
         </td>
       </tr>
     <% end %>
@@ -28,4 +33,6 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<% if user_signed_in? %>
+	<%= link_to glyph('plus') + ' New Post', new_post_path, class: "btn btn-success" %>
+<% end %>

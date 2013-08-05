@@ -1,7 +1,18 @@
-<p>URL: <%= @post.url %></p>
-<p>Title: <%= @post.title %></p>
-<p>Description:
-<%= @post.description %></p>
+<dl class="list-group">
+	<dt>URL:</dt>
+	<dd><%= link_to @post.url, @post.url %></dd>
+	<dt>Title:</dt>
+	<dd><%= @post.title %></dd>
+	<dt>Description:</dt>
+	<dd><%= nl2br(@post.description) %></dd>
+</dl>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div class="btn-group">
+	<%= link_to glyph("chevron-left"), posts_path, title: 'Back',
+			class: "btn btn-primary" %>
+	
+	<% if user_signed_in? %>
+		<%= link_to glyph('pencil'), edit_post_path(@post), title: 'Edit',
+				class: "btn btn-inverse" %>
+	<% end %>
+</div>

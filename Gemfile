@@ -44,6 +44,9 @@ end
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
+# Mute assets logs
+gem 'quiet_assets', :group => :development
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 

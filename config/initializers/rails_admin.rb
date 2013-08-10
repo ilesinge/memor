@@ -37,7 +37,7 @@ RailsAdmin.config do |config|
   # config.included_models = ['Post']
 
   # Label methods for model instances:
-  # config.label_methods << :description # Default is [:name, :title]
+  config.label_methods << :username # Default is [:name, :title]
 
 
   ################  Model configuration  ################

@@ -5,7 +5,12 @@ class PostsController < ApplicationController
 
   # GET /
   def index
-    @posts = Post.all
+    post_model = Post
+    if (params['user_id'])
+      @user = User.find_by_username!(params['user_id'])
+      post_model = post_model.where(user: @user)
+    end
+    @posts = post_model.all
   end
 
   # GET /1

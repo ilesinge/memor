@@ -5,7 +5,9 @@ Default::Application.routes.draw do
   resources :posts, path: '/'
   root 'posts#index'
   
-  #resources :posts
+  resources :users, only: [], path: 'user' do
+    get :posts, path: '/', controller: :posts, action: :index
+  end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

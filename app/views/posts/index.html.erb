@@ -1,4 +1,8 @@
-<h2>Listing posts</h2>
+<h2>Listing posts
+<% if @user %>
+	by <%= @user.username %>
+<% end %>
+</h2>
 
 <table class="table table-striped">
   <thead>
@@ -12,7 +16,9 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-      	<td><%= link_to post.title, post.url %> <small>(saved by <%= post.user.username %>)</small></td>
+      	<td><%= link_to post.title, post.url %>
+      		<small>(saved by <%= link_to post.user.username, user_posts_path(post.user) %>)</small>
+      	</td>
       	<td><%= post.description %></td>
         <td>
         	<div class="btn-group">

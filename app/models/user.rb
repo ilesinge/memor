@@ -7,5 +7,11 @@ class User < ActiveRecord::Base
   
   has_many :posts
   
-  validates :username, presence: true, uniqueness: true, length: { :in => 6..20 }
+  validates :username, presence: true, uniqueness: true, length: { :in => 6..20 },
+    format: { :with => /\A[a-zA-Z]+[a-zA-Z1-9_-]+\Z/i }
+      
+  def to_param
+    username
+  end
+  
 end

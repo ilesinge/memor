@@ -12,7 +12,7 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-      	<td><%= link_to post.title, post.url %></td>
+      	<td><%= link_to post.title, post.url %> <small>(saved by <%= post.user.username %>)</small></td>
       	<td><%= post.description %></td>
         <td>
         	<div class="btn-group">

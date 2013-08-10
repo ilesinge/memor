@@ -11,6 +11,11 @@ class PostsController < ApplicationController
       post_model = post_model.where(user: @user)
     end
     @posts = post_model.all
+    
+    respond_to do |format|
+      format.html
+      format.atom { render :layout => false } #index.atom.builder
+    end
   end
 
   # GET /1

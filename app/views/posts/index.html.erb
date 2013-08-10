@@ -2,6 +2,7 @@
 <% if @user %>
 	by <%= @user.username %>
 <% end %>
+	<%= link_to glyph('rss'), {format: 'atom'}, class: "btn btn-warning" %>
 </h2>
 
 <table class="table table-striped">

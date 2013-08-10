@@ -4,6 +4,9 @@
   <title>Memor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/logo.png" />
+  <% if params['controller'] == 'posts' and params['action'] == 'index' %>
+  	<%= auto_discovery_link_tag(:atom, {format: 'atom'}) %>
+  <% end %>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>

@@ -175,6 +175,7 @@ DEPENDENCIES
   acts-as-taggable-on
   devise
   jquery-rails
+  jquery-ui-rails
   less-rails (>= 2.3.2)
   mysql2
   quiet_assets

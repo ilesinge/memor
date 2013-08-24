@@ -14,4 +14,16 @@
 //= require jquery_ujs
 //= require twitter/bootstrap/bootstrap-alert
 //= require twitter/bootstrap/bootstrap-collapse
+//= require jquery.ui.core
+//= require jquery.ui.widget
+//= require jquery.ui.position
+//= require jquery.ui.autocomplete
 //= require_tree .
+
+$(document).ready(function() {
+	$("#post_tag_list").tagit({
+		caseSensitive: false,
+		allowSpaces: true,
+	});
+	$('ul.tagit').removeClass('ui-corner-all');
+});

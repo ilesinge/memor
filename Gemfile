@@ -33,6 +33,9 @@ gem "validate_url"
 # Tags
 gem 'acts-as-taggable-on'
 
+# jQuery UI
+gem 'jquery-ui-rails'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 #gem 'jbuilder', '~> 1.2'
 

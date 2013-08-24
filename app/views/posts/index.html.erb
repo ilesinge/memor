@@ -10,6 +10,7 @@
     <tr>
       <th>Title</th>
       <th>Description</th>
+      <th>Tags</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -21,6 +22,9 @@
       		<small>(saved by <%= link_to post.user.username, user_posts_path(post.user) %>)</small>
       	</td>
       	<td><%= post.description %></td>
+      	<td><% post.tag_list.each do |tag|%>
+				<%= link_to tag, tag_posts_path(tag), class: "btn btn-info" %>
+			<% end %></td>
         <td>
         	<div class="btn-group">
 	        	<%= link_to glyph('eye-open'), post, title: 'Show', class: "btn btn-info" %>

@@ -14,5 +14,8 @@
 	<% if user_signed_in? and @post.user == current_user %>
 		<%= link_to glyph('pencil'), edit_post_path(@post), title: 'Edit',
 				class: "btn btn-inverse" %>
+		<%= link_to glyph('trash'), @post, method: :delete, title: 'Delete',
+    			data: { confirm: 'Are you sure you want to delete "' + @post.title + '" ?' },
+    			class: "btn btn-danger" %>
 	<% end %>
 </div>

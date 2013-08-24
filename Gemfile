@@ -30,6 +30,9 @@ gem 'rails_admin'
 # URL validator
 gem "validate_url"
 
+# Tags
+gem 'acts-as-taggable-on'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 #gem 'jbuilder', '~> 1.2'
 

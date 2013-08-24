@@ -66,7 +66,7 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:url, :title, :description)
+      params.require(:post).permit(:url, :title, :description, :tag_list)
     end
     
     # Verify if the current user can modify/delete this post

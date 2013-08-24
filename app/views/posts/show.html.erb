@@ -5,6 +5,8 @@
 	<dd><%= @post.title %></dd>
 	<dt>Description:</dt>
 	<dd><%= nl2br(@post.description) %></dd>
+	<dt>Tags:</dt>
+	<dd><%= @post.tag_list.to_s %></dd>
 </dl>
 
 <div class="btn-group">

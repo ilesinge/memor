@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :check_access, only: [:edit, :update, :destroy]
 
   # GET /
   def index
@@ -66,5 +67,13 @@ class PostsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def post_params
       params.require(:post).permit(:url, :title, :description)
+    end
+    
+    # Verify if the current user can modify/delete this post
+    def check_access
+      if @post.user != current_user
+        flash[:error] = "You cannot modify this post"
+        redirect_to :root
+      end
     end
 end

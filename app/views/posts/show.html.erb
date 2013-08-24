@@ -11,7 +11,7 @@
 	<%= link_to glyph("chevron-left"), posts_path, title: 'Back',
 			class: "btn btn-primary" %>
 	
-	<% if user_signed_in? %>
+	<% if user_signed_in? and @post.user == current_user %>
 		<%= link_to glyph('pencil'), edit_post_path(@post), title: 'Edit',
 				class: "btn btn-inverse" %>
 	<% end %>

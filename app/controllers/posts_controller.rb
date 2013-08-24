@@ -11,6 +11,9 @@ class PostsController < ApplicationController
       @user = User.find_by_username!(params['user_id'])
       post_model = post_model.where(user: @user)
     end
+    if (params['tag_id'])
+      post_model = post_model.tagged_with(params['tag_id'])
+    end
     @posts = post_model.all
     
     respond_to do |format|

@@ -9,6 +9,10 @@ Default::Application.routes.draw do
     get :posts, path: '/', controller: :posts, action: :index
   end
   
+  resources :tags, only: [], path: 'tag' do
+    get :posts, path: '/', controller: :posts, action: :index
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   # GET /
   def index
-    post_model = Post.order(:id).page params[:page]
+    post_model = Post.order(:id).reverse_order.page params[:page]
     if (params['user_id'])
       @user = User.find_by_username!(params['user_id'])
       post_model = post_model.where(user: @user)

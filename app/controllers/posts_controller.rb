@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   # GET /
   def index
-    post_model = Post
+    post_model = Post.page params[:page]
     if (params['user_id'])
       @user = User.find_by_username!(params['user_id'])
       post_model = post_model.where(user: @user)
@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     if (params['tag_id'])
       post_model = post_model.tagged_with(params['tag_id'])
     end
-    @posts = post_model.all
+    @posts = post_model
     
     respond_to do |format|
       format.html

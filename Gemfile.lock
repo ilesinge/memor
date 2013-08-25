@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/amatsuda/kaminari.git
+  revision: 01f65e112dd9741921e850473739065a55615b1d
+  specs:
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -62,9 +70,6 @@ GEM
       jquery-rails
       railties (>= 3.1.0)
     json (1.8.0)
-    kaminari (0.14.1)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
     less (2.3.2)
       commonjs (~> 0.2.6)
     less-rails (2.3.3)
@@ -176,6 +181,7 @@ DEPENDENCIES
   devise
   jquery-rails
   jquery-ui-rails
+  kaminari!
   less-rails (>= 2.3.2)
   mysql2
   nokogiri

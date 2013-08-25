@@ -42,7 +42,7 @@
   </tbody>
 </table>
 
-<br>
+<%= paginate @posts %>
 
 <% if user_signed_in? %>
 	<%= link_to glyph('plus') + ' New Post', new_post_path, class: "btn btn-success" %>

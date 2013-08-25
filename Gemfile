@@ -39,6 +39,8 @@ gem 'jquery-ui-rails'
 # HTML/XML parser
 gem 'nokogiri'
 
+gem 'kaminari', :github => 'amatsuda/kaminari'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 #gem 'jbuilder', '~> 1.2'
 

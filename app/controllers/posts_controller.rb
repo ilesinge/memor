@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   # GET /
   def index
-    post_model = Post.page params[:page]
+    post_model = Post.order(:id).page params[:page]
     if (params['user_id'])
       @user = User.find_by_username!(params['user_id'])
       post_model = post_model.where(user: @user)
@@ -58,7 +58,7 @@ class PostsController < ApplicationController
   # DELETE /1
   def destroy
     @post.destroy
-    redirect_to posts_url, notice: 'Post "'+@post.title+'" was successfully destroyed.'
+    redirect_to posts_url, notice: 'Post "'+@post.title+'" was successfully deleted.'
   end
 
   private

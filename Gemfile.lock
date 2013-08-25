@@ -178,6 +178,7 @@ DEPENDENCIES
   jquery-ui-rails
   less-rails (>= 2.3.2)
   mysql2
+  nokogiri
   quiet_assets
   rails (= 4.0.0)
   rails_admin

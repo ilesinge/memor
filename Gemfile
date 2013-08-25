@@ -36,6 +36,9 @@ gem 'acts-as-taggable-on'
 # jQuery UI
 gem 'jquery-ui-rails'
 
+# HTML/XML parser
+gem 'nokogiri'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 #gem 'jbuilder', '~> 1.2'
 

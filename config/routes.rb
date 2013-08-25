@@ -2,6 +2,9 @@ Default::Application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   
+  get :import, to: 'import#index'
+  post :import, to: 'import#start'
+  
   resources :posts, path: '/'
   root 'posts#index'
   
@@ -12,6 +15,8 @@ Default::Application.routes.draw do
   resources :tags, only: [], path: 'tag' do
     get :posts, path: '/', controller: :posts, action: :index
   end
+  
+   
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

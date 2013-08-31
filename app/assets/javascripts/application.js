@@ -24,6 +24,11 @@ $(document).ready(function() {
 	$("#post_tag_list").tagit({
 		caseSensitive: false,
 		allowSpaces: true,
+		autocomplete: {
+			delay: 0,
+			minLength: 1,
+			source: '/tags.json'
+		}
 	});
 	$('ul.tagit').removeClass('ui-corner-all');
 });

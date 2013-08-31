@@ -5,6 +5,14 @@
 	<%= link_to glyph('rss'), {format: 'atom'}, class: "btn btn-warning" %>
 </h2>
 
+<% if @posts.empty? %>
+
+<div class="alert alert-danger">
+	No post were found :(
+</div>
+
+<% else %>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -43,6 +51,8 @@
 </table>
 
 <%= paginate @posts %>
+
+<% end %>
 
 <% if user_signed_in? %>
 	<%= link_to glyph('plus') + ' New Post', new_post_path, class: "btn btn-success" %>

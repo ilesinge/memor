@@ -23,8 +23,8 @@ class ImportController < ApplicationController
       post.tag_list = link['tags']
       post.description = link['description']
       post.user = current_user
+      post.created_at = Time.at(link['add_date'].to_i)
       post.save
-      #link['add_date']
       #link['hash']
       if post.invalid?
         error_count += 1

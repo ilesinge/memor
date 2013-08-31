@@ -18,6 +18,13 @@
 		
 		<%= menu_group :pull => :right do %>
 			<% if user_signed_in? %>
+				<%= menu_item 'Bookmarklet', "javascript:(function(){
+						x=document;a=encodeURIComponent(x.location.href);
+						t=encodeURIComponent(x.title);
+						d=encodeURIComponent(window.getSelection());
+						open('"+new_post_path(:only_path => false)+"%3Furl='+a+'%26title='+t+'%26description='+d,'Memor','modal=1,status=0,scrollbars=1,toolbar=0,resizable=1,width=790,height=490,left='+(screen.width-790)/2+',top='+(screen.height-450)/2);
+						})();"
+				%>
 				<%= menu_item 'Import', import_path %>
 		  		<%= menu_item 'Logout', destroy_user_session_path, :method => :delete %>        
 			<% else %>

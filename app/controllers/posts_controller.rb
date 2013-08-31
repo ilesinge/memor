@@ -31,6 +31,9 @@ class PostsController < ApplicationController
   # GET /new
   def new
     @post = Post.new
+    @post.url = params['url']
+    @post.title = params['title']
+    @post.description = params['description']
   end
 
   # GET /1/edit

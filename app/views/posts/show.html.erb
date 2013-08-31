@@ -10,6 +10,14 @@
 			<%= link_to tag, tag_posts_path(tag), class: "btn btn-info" %>
 		<% end %>
 	</dd>
+	<% if !@related.empty? %>
+	<dt>Related posts:</dt>
+	<dd>
+		<% @posts = @related %>
+		<%= render 'list' %>
+		
+	</dd>
+	<% end %>
 </dl>
 
 <div class="btn-group">

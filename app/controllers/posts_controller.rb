@@ -25,6 +25,7 @@ class PostsController < ApplicationController
 
   # GET /1
   def show
+    @related = @post.find_related_on_tags[0..5]
   end
 
   # GET /new

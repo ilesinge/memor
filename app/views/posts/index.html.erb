@@ -30,7 +30,7 @@
     <% @posts.each do |post| %>
       <tr>
       	<td><%= link_to post.title, post.url %>
-      		<small>(saved by <%= link_to post.user.username, user_posts_path(post.user) %>)</small>
+      		<small>(saved by <%= link_to post.user.username, user_posts_path(post.user) %> on <%= post.created_at.getlocal.strftime '%B %-d %Y' %>)</small>
       	</td>
       	<td><%= post.description %></td>
       	<td class="tags"><% post.tag_list.each do |tag|%>

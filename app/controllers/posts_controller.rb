@@ -8,8 +8,7 @@ class PostsController < ApplicationController
   def index
     post_model = Post.order(:id).reverse_order.page params[:page]
     if (params['user_id'])
-      @user = User.find_by_username!(params['user_id'])
-      post_model = post_model.where(user: @user)
+      post_model = post_model.joins(:user).where('users.username' => params['user_id'])
     end
     if (params['tag_id'])
       post_model = post_model.tagged_with(params['tag_id'])

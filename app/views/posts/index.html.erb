@@ -1,6 +1,9 @@
 <h2>Listing posts
 <% if @user %>
-	by <%= @user.username %>
+	by <%= @user %>
+<% end %>
+<% if @tag %>
+	tagged with <%= @tag %>
 <% end %>
 	<%= link_to glyph('rss'), {format: 'atom'}, class: "btn btn-warning" %>
 </h2>

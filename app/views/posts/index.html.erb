@@ -16,42 +16,7 @@
 
 <% else %>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Tags</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-      	<td><%= link_to post.title, post.url %>
-      		<small>(saved by <%= link_to post.user.username, user_posts_path(post.user) %> on <%= post.created_at.getlocal.strftime '%B %-d %Y' %>)</small>
-      	</td>
-      	<td><%= post.description %></td>
-      	<td class="tags"><% post.tag_list.each do |tag|%>
-				<%= link_to tag, tag_posts_path(tag), class: "btn btn-info" %>
-			<% end %></td>
-        <td>
-        	<div class="btn-group">
-	        	<%= link_to glyph('eye-open'), post, title: 'Show', class: "btn btn-info" %>
-	        	<% if user_signed_in? and post.user == current_user %>
-	        		<%= link_to glyph('pencil'), edit_post_path(post), title: 'Edit',
-	        			class: "btn btn-inverse" %>
-	        		<%= link_to glyph('trash'), post, method: :delete, title: 'Delete',
-	        			data: { confirm: 'Are you sure you want to delete "' + post.title + '" ?' },
-	        			class: "btn btn-danger" %>
-	        	<% end %>
-	        </div>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'list' %>
 
 <%= paginate @posts %>
 

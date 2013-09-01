@@ -16,6 +16,17 @@
   <%= f.input :description %>
   <%= f.input :tag_list, hint: 'Use commas to separate tags.' %>
   
+  <% if @suggested_tags %>
+  	<div class="control-group string optional">
+  		<label class="string optional control-label">Suggested tags</label>
+  		<div class="controls">
+	  		<% @suggested_tags.each do |tag| %>
+	  			<a href="#" class="suggested_tag btn btn-primary btn-xs"><%= tag %></a>
+	  		<% end %>
+  		</div>
+  	</div>
+  <% end %>
+  
   <div class="actions">
     <%= f.submit class: 'btn btn-success' %>
   </div>

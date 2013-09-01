@@ -31,4 +31,7 @@ $(document).ready(function() {
 		}
 	});
 	$('ul.tagit').removeClass('ui-corner-all');
+	$('.suggested_tag').click(function(){
+		$("#post_tag_list").tagit("createTag", $(this).html());
+	})
 });

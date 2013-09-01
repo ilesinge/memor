@@ -34,6 +34,8 @@ class PostsController < ApplicationController
     @post.url = params['url']
     @post.title = params['title']
     @post.description = params['description']
+    
+    @suggested_tags = suggested_tags @post
   end
 
   # GET /1/edit
@@ -83,5 +85,17 @@ class PostsController < ApplicationController
         flash[:error] = "You cannot modify this post"
         redirect_to :root
       end
+    end
+    
+    def suggested_tags(post)
+      suggested_tags = []
+      if !post.title.empty? or !post.description.empty?
+        ActsAsTaggableOn::Tag.all.each do |tag|
+          if post.title.downcase.include? tag.name or post.description.downcase.include? tag.name 
+            suggested_tags.push(tag.name)
+          end
+        end
+      end
+      suggested_tags
     end
 end

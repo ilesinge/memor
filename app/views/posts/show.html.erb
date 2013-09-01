@@ -7,7 +7,7 @@
 	<dd><%= nl2br(@post.description) %></dd>
 	<dt>Tags:</dt>
 	<dd><% @post.tag_list.each do |tag|%>
-			<%= link_to tag, tag_posts_path(tag), class: "btn btn-info" %>
+			<%= link_to tag, tag_posts_path(tag), class: "btn btn-primary" %>
 		<% end %>
 	</dd>
 	<% if !@related.empty? %>

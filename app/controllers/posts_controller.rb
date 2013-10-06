@@ -30,6 +30,12 @@ class PostsController < ApplicationController
 
   # GET /new
   def new
+    
+    existing_post = Post.where('url' => params['url']).first
+    if !existing_post.nil?
+      redirect_to existing_post 
+    end
+    
     @post = Post.new
     @post.url = params['url']
     @post.title = params['title']

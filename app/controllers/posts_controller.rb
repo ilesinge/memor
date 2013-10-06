@@ -37,11 +37,13 @@ class PostsController < ApplicationController
     end
     
     @post = Post.new
-    @post.url = params['url']
-    @post.title = params['title']
-    @post.description = params['description']
-    
-    @suggested_tags = suggested_tags @post
+    if params['url']
+      @post.url = params['url']
+      @post.title = params['title']
+      @post.description = params['description']
+      
+      @suggested_tags = suggested_tags @post
+    end
   end
 
   # GET /1/edit

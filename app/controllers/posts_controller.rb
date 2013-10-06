@@ -112,7 +112,7 @@ class PostsController < ApplicationController
     def check_existence(post_params)
       existing_post = Post.where('url' => post_params['url']).first
       if !existing_post.nil?
-        flash[:warning] = 'The following post already exists with the same URL: <a class="alert-link" href="' + url_for(existing_post) + '">' + h(existing_post.title) + '</a>'
+        flash.now[:warning] = 'The following post already exists with the same URL: <a class="alert-link" href="' + url_for(existing_post) + '">' + h(existing_post.title) + '</a>'
       end
     end
     

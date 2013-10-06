@@ -57,6 +57,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post, notice: 'Post was successfully created.'
     else
+      check_existence post_params
       render action: 'new'
     end
   end
@@ -66,6 +67,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to @post, notice: 'Post was successfully updated.'
     else
+      check_existence post_params
       render action: 'edit'
     end
   end
@@ -106,4 +108,12 @@ class PostsController < ApplicationController
       end
       suggested_tags
     end
+    
+    def check_existence(post_params)
+      existing_post = Post.where('url' => post_params['url']).first
+      if !existing_post.nil?
+        flash[:warning] = 'The following post already exists with the same URL: <a class="alert-link" href="' + url_for(existing_post) + '">' + h(existing_post.title) + '</a>'
+      end
+    end
+    
 end

@@ -17,6 +17,12 @@
 			:brand => image_tag('logo.png', :size => '30x30', :alt => 'Memor') + 'Memor' do %>
 		
 		<%= menu_group :pull => :right do %>
+		    
+		    <form class="navbar-form pull-left" method="get" action="/">
+		    	<input name="q" placeholder="Search" type="text" class="input-medium search-query">
+		    	<button type="submit" class="btn btn-inverse"><%= glyph('search') %></button>
+		    </form>
+		
 			<% if user_signed_in? %>
 				<%= menu_item 'Bookmarklet', "javascript:(function(){
 						x=document;a=encodeURIComponent(x.location.href);

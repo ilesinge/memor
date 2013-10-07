@@ -15,6 +15,10 @@ class PostsController < ApplicationController
       @tag = params['tag_id']
       post_model = post_model.tagged_with(params['tag_id'])
     end
+    if (params['q'])
+      q = "%#{params['q']}%"
+      post_model = post_model.where("title like ? or description like ?", q, q)
+    end
     @posts = post_model
     
     respond_to do |format|

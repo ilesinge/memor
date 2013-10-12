@@ -1,0 +1,5 @@
+fr:
+  import: "Importer"
+  login: "Se connecter"
+  search: "Recherche"
+  logout: "Se déconnecter"

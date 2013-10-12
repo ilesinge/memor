@@ -19,7 +19,7 @@
 		<%= menu_group :pull => :right do %>
 		    
 		    <form class="navbar-form pull-left" method="get" action="/">
-		    	<input name="q" placeholder="Search" type="text" class="input-medium search-query">
+		    	<input name="q" placeholder="<%= t 'search' %>" type="text" class="input-medium search-query">
 		    	<button type="submit" class="btn btn-inverse"><%= glyph('search') %></button>
 		    </form>
 		
@@ -31,10 +31,10 @@
 						open('"+new_post_path(:only_path => false)+"%3Furl='+a+'%26title='+t+'%26description='+d,'Memor','modal=1,status=0,scrollbars=1,toolbar=0,resizable=1,width=790,height=585,left='+(screen.width-790)/2+',top='+(screen.height-545)/2);
 						})();"
 				%>
-				<%= menu_item 'Import', import_path %>
-		  		<%= menu_item 'Logout', destroy_user_session_path, :method => :delete %>        
+				<%= menu_item t('import'), import_path %>
+		  		<%= menu_item t('logout'), destroy_user_session_path, :method => :delete %>        
 			<% else %>
-		  		<%= menu_item 'Login', new_user_session_path %>
+		  		<%= menu_item t('login'), new_user_session_path %>
 			<% end %>
 		<% end %>
 			

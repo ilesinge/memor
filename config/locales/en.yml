@@ -20,4 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  import: "Import"
+  login: "Login"
+  search: "Search"
+  logout: "Se déconnecter"

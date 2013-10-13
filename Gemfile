@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '~> 4.0'
 
 # Use mysql2 as the database for Active Record
 gem 'mysql2'
@@ -22,7 +22,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 
 # Simplify forms generation
-gem 'simple_form'
+gem 'simple_form', '~> 3.0'
 
 # Admin !
 gem 'rails_admin'
@@ -61,5 +61,4 @@ gem 'quiet_assets', :group => :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-
-gem "devise"
+gem "devise", '~> 3.0'

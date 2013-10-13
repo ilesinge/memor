@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/amatsuda/kaminari.git
-  revision: 01f65e112dd9741921e850473739065a55615b1d
+  revision: d5757227d7fafacefeab3d585f41c11933bd46db
   specs:
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
@@ -36,9 +36,9 @@ GEM
     acts-as-taggable-on (2.4.1)
       rails (>= 3, < 5)
     arel (4.0.0)
-    atomic (1.1.12)
-    bcrypt-ruby (3.1.1)
-    bootstrap-sass (2.3.2.1)
+    atomic (1.1.14)
+    bcrypt-ruby (3.1.2)
+    bootstrap-sass (2.3.2.2)
       sass (~> 3.2)
     builder (3.1.4)
     coffee-rails (4.0.0)
@@ -48,41 +48,40 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    commonjs (0.2.6)
-    devise (3.0.2)
+    commonjs (0.2.7)
+    devise (3.1.1)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
-    execjs (1.4.0)
-      multi_json (~> 1.0)
-    font-awesome-rails (3.2.1.2)
+    execjs (2.0.2)
+    font-awesome-rails (3.2.1.3)
       railties (>= 3.2, < 5.0)
     haml (4.0.3)
       tilt
     hike (1.2.3)
-    i18n (0.6.4)
+    i18n (0.6.5)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (4.0.4)
-      jquery-rails
+    jquery-ui-rails (4.0.5)
       railties (>= 3.1.0)
     json (1.8.0)
-    less (2.3.2)
-      commonjs (~> 0.2.6)
-    less-rails (2.3.3)
+    less (2.4.0)
+      commonjs (~> 0.2.7)
+    less-rails (2.4.2)
       actionpack (>= 3.1)
-      less (~> 2.3.1)
-    libv8 (3.11.8.17)
+      less (~> 2.4.0)
+    libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.23)
+    mime-types (1.25)
     mini_portile (0.5.1)
     minitest (4.7.5)
-    multi_json (1.7.8)
+    multi_json (1.8.1)
     mysql2 (0.3.13)
     nested_form (0.3.2)
     nokogiri (1.6.0)
@@ -130,8 +129,8 @@ GEM
       json (~> 1.4)
     ref (1.0.5)
     remotipart (1.2.1)
-    safe_yaml (0.9.5)
-    sass (3.2.10)
+    safe_yaml (0.9.7)
+    sass (3.2.12)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
@@ -139,7 +138,9 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
-    simple_form (1.4.1)
+    simple_form (3.0.0)
+      actionpack (>= 4.0.0, < 4.1)
+      activemodel (>= 4.0.0, < 4.1)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -149,14 +150,14 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    therubyracer (0.11.4)
-      libv8 (~> 3.11.8.12)
+    therubyracer (0.12.0)
+      libv8 (~> 3.16.14.0)
       ref
     thor (0.18.1)
-    thread_safe (0.1.2)
+    thread_safe (0.1.3)
       atomic
     tilt (1.4.1)
-    treetop (1.4.14)
+    treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
     twitter-bootstrap-rails (2.2.8)
@@ -164,8 +165,8 @@ GEM
       execjs
       rails (>= 3.1)
       railties (>= 3.1)
-    tzinfo (0.3.37)
-    uglifier (2.1.2)
+    tzinfo (0.3.38)
+    uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     validate_url (0.2.0)
@@ -178,7 +179,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
-  devise
+  devise (~> 3.0)
   jquery-rails
   jquery-ui-rails
   kaminari!
@@ -186,7 +187,7 @@ DEPENDENCIES
   mysql2
   nokogiri
   quiet_assets
-  rails (= 4.0.0)
+  rails (~> 4.0)
   rails_admin
   sdoc
   simple_form

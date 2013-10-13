@@ -62,3 +62,5 @@ gem 'quiet_assets', :group => :development
 # gem 'debugger', group: [:development, :test]
 
 gem "devise", '~> 3.0'
+
+gem 'http_accept_language'

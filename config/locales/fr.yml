@@ -3,3 +3,15 @@ fr:
   login: "Se connecter"
   search: "Recherche"
   logout: "Se déconnecter"
+  by: "par"
+  tagged_with:
+    zero: "avec l'étiquette « %{tag} »"
+    one: "étiqueté « %{tag} »"
+    other: 'étiquetés « %{tag} »'
+  new_post: "Nouveau lien"
+  activerecord:
+    models:
+      post: Lien
+    attributes:
+      user:
+        login: "Handle"

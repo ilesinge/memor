@@ -24,3 +24,6 @@ en:
   login: "Sign in"
   search: "Search"
   logout: "Se déconnecter"
+  by: "by"
+  tagged_with: 'tagged with "%{tag}"'
+  new_post: "New post"

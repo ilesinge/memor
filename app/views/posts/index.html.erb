@@ -1,9 +1,9 @@
 <h2><%= page_entries_info @posts %>
 <% if @user %>
-	by <%= @user %>
+	<%= t('by', count: @posts.count) %> <%= @user %>
 <% end %>
 <% if @tag %>
-	tagged with <%= @tag %>
+	<%= t('tagged_with', count: @posts.count, tag: @tag) %>
 <% end %>
 	<%= link_to glyph('rss'), {format: 'atom'}, class: "btn btn-warning" %>
 </h2>

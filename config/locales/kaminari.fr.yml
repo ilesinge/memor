@@ -10,7 +10,7 @@ fr:
     page_entries_info:
       one_page:
         display_entries:
-          zero: "Aucun(e) %{entry_name} trouvé(e)"
+          zero: "Aucun lien trouvé"
           one: "Affichage de <b>1</b> %{entry_name}"
           other: "Affichage des <b>%{count}</b> %{entry_name}"
       more_pages:

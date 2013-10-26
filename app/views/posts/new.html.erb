@@ -1,5 +1,5 @@
-<h2>New post</h2>
+<h2><%= t('new_post') %></h2>
 
 <%= render 'form' %>
 
-<%= link_to glyph("chevron-left"), posts_path, title: 'Back', class: "btn btn-primary" %>
+<%= link_to glyph("chevron-left"), posts_path, title: t('back'), class: "btn btn-primary" %>

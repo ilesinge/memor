@@ -14,9 +14,28 @@ fr:
   activerecord:
     models:
       post: Lien
+    attributes:
+      post:
+        title: 'Titre'
+        tag_list: "Liste d'étiquettes"
+        url: 'URL'
   time:
     formats:
       default: '%-d %B %Y'
   edit: 'Modifier'
   delete: 'Supprimer'
+  save: 'Enregistrer'
+  back: 'Retour'
+  show: 'Afficher'
   confirm_delete: 'Etes-vous certain de vouloir supprimer le lien « %{post} » ?'
+  editing_post: 'Edition du lien'
+  error: 'erreur'
+  post_errors_header:
+    one: "%{count} erreur a empêché ce lien d'être enregistré :"
+    other: "%{count} erreurs ont empêché ce lien d'être enregistré :"
+  existing_post: 'Le lien suivant existe déjà avec le même URL :'
+  cannot_edit_post: 'Vous ne pouvez pas modifier ce lien.'
+  post_deleted: 'Le lien « %{post} » a bien été supprimé.'
+  post_updated: 'Le lien a bien été modifié.'
+  post_created: 'Le lien a bien été créé.'
+  tag_list_hint: 'Veuillez utiliser des virgules pour séparer les tags.'

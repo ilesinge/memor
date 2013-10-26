@@ -59,7 +59,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
+      redirect_to @post, notice: t('post_created')
     else
       check_existence post_params
       render action: 'new'
@@ -69,7 +69,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /1
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.'
+      redirect_to @post, notice: t('post_updated')
     else
       check_existence post_params
       render action: 'edit'
@@ -79,7 +79,7 @@ class PostsController < ApplicationController
   # DELETE /1
   def destroy
     @post.destroy
-    redirect_to posts_url, notice: 'Post "'+@post.title+'" was successfully deleted.'
+    redirect_to posts_url, notice: t('post_deleted', post: @post.title)
   end
 
   private
@@ -96,7 +96,7 @@ class PostsController < ApplicationController
     # Verify if the current user can modify/delete this post
     def check_access
       if @post.user != current_user
-        flash[:error] = "You cannot modify this post"
+        flash[:error] = t('cannot_edit_post')
         redirect_to :root
       end
     end
@@ -115,8 +115,8 @@ class PostsController < ApplicationController
     
     def check_existence(post_params)
       existing_post = Post.where('url' => post_params['url']).first
-      if !existing_post.nil?
-        flash.now[:warning] = 'The following post already exists with the same URL: <a class="alert-link" href="' + url_for(existing_post) + '">' + h(existing_post.title) + '</a>'
+      if !existing_post.nil? and existing_post.id != post_params['id']
+        flash.now[:warning] = I18n.t('existing_post') + ' <a class="alert-link" href="' + url_for(existing_post) + '">' + h(existing_post.title) + '</a>'
       end
     end
     

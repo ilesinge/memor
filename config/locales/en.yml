@@ -29,9 +29,25 @@ en:
   new_post: "New post"
   posted_by: "posted by"
   on_date: "on %{date}"
+  activerecord:
+    attributes:
+      post:
+        url: 'URL'
   time:
     formats:
       default: '%B %-d, %Y'
   edit: 'Edit'
   delete: 'Supprimer'
+  save: 'Save'
+  back: 'Back'
+  show: 'Show'
   confirm_delete: 'Are you sure you want to delete post "%{post}"?'
+  editing_post: 'Editing post'
+  error: 'error'
+  post_errors_header: '%{errors} prohibited this post from being saved:'
+  existing_post: 'The following post already exists with the same URL:'
+  cannot_edit_post: 'You cannot modify this post.'
+  post_deleted: 'Post "%{post}" was successfully deleted.'
+  post_updated: 'Post was successfully updated.'
+  post_created: 'Post was successfully created.'
+  tag_list_hint: 'Use commas to separate tags.'

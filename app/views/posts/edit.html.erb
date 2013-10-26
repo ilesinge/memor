@@ -1,8 +1,8 @@
-<h2>Editing post</h2>
+<h2><%= t('editing_post') %></h2>
 
 <%= render 'form' %>
 
 <div class="btn-group">
-	<%= link_to glyph("chevron-left"), posts_path, title: 'Back', class: "btn btn-primary" %>
-	<%= link_to glyph('eye-open'), @post, title: 'Show', class: "btn btn-info" %>
+	<%= link_to glyph("chevron-left"), posts_path, title: t('back'), class: "btn btn-primary" %>
+	<%= link_to glyph('eye-open'), @post, title: t('show'), class: "btn btn-info" %>
 </div>

@@ -27,3 +27,11 @@ en:
   by: "by"
   tagged_with: 'tagged with "%{tag}"'
   new_post: "New post"
+  posted_by: "posted by"
+  on_date: "on %{date}"
+  time:
+    formats:
+      default: '%B %-d, %Y'
+  edit: 'Edit'
+  delete: 'Supprimer'
+  confirm_delete: 'Are you sure you want to delete post "%{post}"?'

@@ -9,9 +9,14 @@ fr:
     one: "étiqueté « %{tag} »"
     other: 'étiquetés « %{tag} »'
   new_post: "Nouveau lien"
+  posted_by: "publié par"
+  on_date: "le %{date}"
   activerecord:
     models:
       post: Lien
-    attributes:
-      user:
-        login: "Handle"
+  time:
+    formats:
+      default: '%-d %B %Y'
+  edit: 'Modifier'
+  delete: 'Supprimer'
+  confirm_delete: 'Etes-vous certain de vouloir supprimer le lien « %{post} » ?'

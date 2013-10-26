@@ -5,7 +5,7 @@
       	<td><%= link_to post.title, post %>
       		<%= link_to glyph('external-link'), post.url, title: post.title %>
       		<br/>
-      		<small>(saved by <%= link_to post.user.username, user_posts_path(post.user) %> on <%= post.created_at.getlocal.strftime '%B %-d %Y' %>)</small>
+      		<small>(<%= t('posted_by')%> <%= link_to post.user.username, user_posts_path(post.user) %> <%= t('on_date', date: l(post.created_at)) %>)</small>
       	</td>
       	<td><%= post.description %></td>
       	<td class="tags"><% post.tag_list.each do |tag|%>
@@ -15,10 +15,10 @@
         <td>
         	<% if post.user == current_user %>
         		<div class="btn-group">	
-	        		<%= link_to glyph('pencil'), edit_post_path(post), title: 'Edit',
+	        		<%= link_to glyph('pencil'), edit_post_path(post), title: t('edit'),
 	        			class: "btn btn-inverse" %>
-	        		<%= link_to glyph('trash'), post, method: :delete, title: 'Delete',
-	        			data: { confirm: 'Are you sure you want to delete "' + post.title + '" ?' },
+	        		<%= link_to glyph('trash'), post, method: :delete, title: t('delete'),
+	        			data: { confirm: t('confirm_delete', post: post.title) },
 	        			class: "btn btn-danger" %>
 	        	</div>
 	        <% end %>

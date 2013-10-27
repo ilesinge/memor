@@ -39,3 +39,12 @@ fr:
   post_updated: 'Le lien a bien été modifié.'
   post_created: 'Le lien a bien été créé.'
   tag_list_hint: 'Veuillez utiliser des virgules pour séparer les tags.'
+  import_bookmarks: 'Importez vos marque-pages'
+  file: 'Fichier'
+  import_file_missing: "Le fichier d'import est manquant !"
+  import_success:
+    one: '%{count} lien a été correctement importé :)'
+    other: '%{count} liens ont été correcté importés :)'
+  import_failure:
+    one:  "%{count} lien n'a pas pu être importé <em>(probablement à cause d'un doublon ou d'un champ manquant)</em>"
+    other: "%{count} liens n'ont pas pu être importés <em>(probablement à cause de doublons ou de champs manquants)</em>"

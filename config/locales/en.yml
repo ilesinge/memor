@@ -51,3 +51,12 @@ en:
   post_updated: 'Post was successfully updated.'
   post_created: 'Post was successfully created.'
   tag_list_hint: 'Use commas to separate tags.'
+  import_bookmarks: 'Import your bookmarks'
+  file: 'File'
+  import_file_missing: 'The import file was missing!'
+  import_success:
+    one: '%{count} post was successfully imported :)'
+    other: '%{count} posts were successfully imported :)'
+  import_failure:
+    one:  '%{count} post could not be imported <em>(probably because of duplicate or missing field)</em>'
+    other: '%{count} posts could not be imported <em>(probably because of duplicates or missing fields)</em>'

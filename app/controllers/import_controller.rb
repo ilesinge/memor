@@ -10,7 +10,7 @@ class ImportController < ApplicationController
   # POST /import
   def start
     if params[:file].nil?
-      flash[:error] = 'The import file was missing!'
+      flash[:error] = t('import_file_missing')
       return redirect_to(import_path)
     end
     success_count = 0
@@ -33,10 +33,10 @@ class ImportController < ApplicationController
       end
     end
     if success_count > 0
-      flash[:notice] = success_count.to_s + ' posts were successfully imported :)'
+      flash[:notice] = I18n.t('import_success', count: success_count)
     end
     if error_count > 0
-      flash[:warning] = error_count.to_s + ' posts could not be imported <em>(probably because of duplicates or missing fields)</em>'
+      flash[:warning] = I18n.t('import_failure', count: error_count)
     end
     redirect_to import_path
   end

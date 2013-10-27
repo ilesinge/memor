@@ -1,8 +1,8 @@
-<h2>Import your bookmarks</h2>
+<h2><%= t('import_bookmarks') %></h2>
 <%= simple_form_for(@file) do |f| %>
-  <%= f.input :file, as: :file %>
+  <%= f.input :file, as: :file, label: t('file') %>
 	
   <div class="actions">
-    <%= f.submit class: 'btn btn-success' %>
+    <%= f.submit t('import'), class: 'btn btn-success' %>
   </div>
 <% end %>

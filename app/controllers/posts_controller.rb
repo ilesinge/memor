@@ -37,7 +37,7 @@ class PostsController < ApplicationController
     
     existing_post = Post.where('url' => params['url']).first
     if !existing_post.nil?
-      redirect_to existing_post 
+      return redirect_to(existing_post)
     end
     
     @post = Post.new

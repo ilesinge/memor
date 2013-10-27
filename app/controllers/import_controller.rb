@@ -11,7 +11,7 @@ class ImportController < ApplicationController
   def start
     if params[:file].nil?
       flash[:error] = 'The import file was missing!'
-      redirect_to import_path
+      return redirect_to(import_path)
     end
     success_count = 0
     error_count = 0

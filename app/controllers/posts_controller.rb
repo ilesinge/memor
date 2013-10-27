@@ -98,6 +98,7 @@ class PostsController < ApplicationController
       if @post.user != current_user
         flash[:error] = t('cannot_edit_post')
         redirect_to :root
+        return false
       end
     end
     

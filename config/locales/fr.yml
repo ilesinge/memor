@@ -48,3 +48,4 @@ fr:
   import_failure:
     one:  "%{count} lien n'a pas pu être importé <em>(probablement à cause d'un doublon ou d'un champ manquant)</em>"
     other: "%{count} liens n'ont pas pu être importés <em>(probablement à cause de doublons ou de champs manquants)</em>"
+  no_access: "Vous n'avez pas accès à cette partie de l'application."

@@ -6,8 +6,9 @@ gem 'rails', '~> 4.0'
 # Default translations
 gem 'rails-i18n', '~> 4.0.0'
 
-# Use mysql2 as the database for Active Record
-gem 'mysql2'
+# Sqlite or MySQL database for Active Record
+#gem 'mysql2'
+gem 'sqlite3'
 
 # LESS CSS
 gem "less-rails", '>= 2.3.2'

@@ -66,3 +66,7 @@ en:
   confirm_delete_user: 'Are you sure you want to delete user "%{user}"?'
   editing_user: 'Editing user'
   user_created: 'User was successfully created.'
+  new_user: 'New user'
+  user_errors_header:
+    one: "%{count} error prohibited this user from being saved:"
+    other: "%{count} errors prohibited this user from being saved:"

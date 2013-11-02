@@ -54,3 +54,7 @@ fr:
   confirm_delete_user: "Etes-vous certain de vouloir supprimer l'utilisateur « %{user} » ?"
   editing_user: "Edition de l'utilisateur"
   user_created: "L'utilisateur a bien été ajouté."
+  new_user: 'Nouvel utilisateur'
+  user_errors_header:
+    one: "%{count} erreur a empêché cet utilisateur d'être enregistré :"
+    other: "%{count} erreurs ont empêché cet utilisateur d'être enregistré :"

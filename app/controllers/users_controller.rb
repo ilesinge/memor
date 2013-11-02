@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1
-  def show
-  end
+  #def show
+  #end
 
   # GET /users/new
   def new
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
       if @user.id == current_user.id
         sign_in @user, :bypass => true
       end
-      redirect_to @user, notice: I18n.t('user_updated')
+      redirect_to users_path, notice: I18n.t('user_updated')
     else
       render action: 'edit'
     end

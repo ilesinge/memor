@@ -24,6 +24,9 @@
 		    </form>
 		
 			<% if user_signed_in? %>
+			  <% if current_user.is_admin? %>
+          	 <%= menu_item t('manage_users'), users_path %>
+			  <% end %>
 				<%= menu_item 'Bookmarklet', "javascript:(function(){
 						x=document;a=encodeURIComponent(x.location.href);
 						t=encodeURIComponent(x.title);

@@ -33,7 +33,15 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-    if @user.update(user_params)
+    if user_params[:password] == ""
+      updated = @user.update_without_password(user_params)
+    else
+      updated = @user.update(user_params)
+    end
+    if updated
+      if @user.id == current_user.id
+        sign_in @user, :bypass => true
+      end
       redirect_to @user, notice: 'User was successfully updated.'
     else
       render action: 'edit'
@@ -42,14 +50,19 @@ class UsersController < ApplicationController
 
   # DELETE /user/1
   def destroy
-    @user.destroy
-    redirect_to user_url, notice: 'User was successfully destroyed.'
+    if @user == current_user
+      flash[:error] = 'You cannot delete yourself.'
+      return redirect_to users_path
+    else
+      @user.destroy
+      redirect_to users_path, notice: 'User was successfully destroyed.'
+    end
   end
 
   private
     # Verify if the current user can manage users
     def check_access
-      if !current_user.is_admin
+      if current_user.nil? or !current_user.is_admin?
         flash[:error] = t('no_access')
         redirect_to :root
         return false
@@ -58,11 +71,11 @@ class UsersController < ApplicationController
   
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = User.where(:username => params[:id]).first!
     end
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params[:user]
+      params.require(:user).permit(:username, :password)
     end
 end

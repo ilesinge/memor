@@ -61,3 +61,8 @@ en:
     one:  '%{count} post could not be imported <em>(probably because of duplicate or missing field)</em>'
     other: '%{count} posts could not be imported <em>(probably because of duplicates or missing fields)</em>'
   no_access: "You don't have access to this part of the application."
+  manage_users: 'Manage users'
+  new_user: 'New user'
+  confirm_delete_user: 'Are you sure you want to delete user "%{user}"?'
+  editing_user: 'Editing user'
+  user_created: 'User was successfully created.'

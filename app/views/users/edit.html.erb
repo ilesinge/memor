@@ -1,6 +1,7 @@
-<h1>Editing user</h1>
+<h2><%= t('editing_user') %></h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="btn-group">
+  <%= link_to glyph("chevron-left"), users_path, title: t('back'), class: "btn btn-primary" %>
+</div>

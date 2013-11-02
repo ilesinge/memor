@@ -44,7 +44,9 @@ en:
   confirm_delete: 'Are you sure you want to delete post "%{post}"?'
   editing_post: 'Editing post'
   error: 'error'
-  post_errors_header: '%{errors} prohibited this post from being saved:'
+  post_errors_header:
+    one: "%{count} error prohibited this post from being saved:"
+    other: "%{count} errors prohibited this post from being saved:"
   existing_post: 'The following post already exists with the same URL:'
   cannot_edit_post: 'You cannot modify this post.'
   post_deleted: 'Post "%{post}" was successfully deleted.'

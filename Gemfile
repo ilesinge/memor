@@ -28,9 +28,6 @@ gem 'jquery-rails'
 # Simplify forms generation
 gem 'simple_form', '~> 3.0'
 
-# Admin !
-gem 'rails_admin'
-
 # URL validator
 gem "validate_url"
 

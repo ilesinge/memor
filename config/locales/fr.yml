@@ -58,3 +58,6 @@ fr:
   user_errors_header:
     one: "%{count} erreur a empêché cet utilisateur d'être enregistré :"
     other: "%{count} erreurs ont empêché cet utilisateur d'être enregistré :"
+  user_updated: "L'utilisateur a bien été mis à jour."
+  cannot_delete_yourself: 'Vous ne pouvez pas vous supprimer.'
+  user_deleted: "L'utilisateur a bien été supprimé."

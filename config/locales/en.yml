@@ -72,3 +72,6 @@ en:
   user_errors_header:
     one: "%{count} error prohibited this user from being saved:"
     other: "%{count} errors prohibited this user from being saved:"
+  user_updated: 'User was successfully updated.'
+  cannot_delete_yourself: 'You cannot delete yourself.'
+  user_deleted: 'User was successfully destroyed.'

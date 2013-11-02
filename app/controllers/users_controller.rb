@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user, notice: 'User was successfully created.'
+      redirect_to users_path, notice: I18n.t('user_created')
     else
       render action: 'new'
     end
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
       if @user.id == current_user.id
         sign_in @user, :bypass => true
       end
-      redirect_to @user, notice: 'User was successfully updated.'
+      redirect_to @user, notice: I18n.t('user_updated')
     else
       render action: 'edit'
     end
@@ -51,11 +51,11 @@ class UsersController < ApplicationController
   # DELETE /user/1
   def destroy
     if @user == current_user
-      flash[:error] = 'You cannot delete yourself.'
+      flash[:error] = I18n.t('cannot_delete_yourself')
       return redirect_to users_path
     else
       @user.destroy
-      redirect_to users_path, notice: 'User was successfully destroyed.'
+      redirect_to users_path, notice: I18n.t('user_deleted')
     end
   end
 

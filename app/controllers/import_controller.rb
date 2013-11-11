@@ -15,7 +15,9 @@ class ImportController < ApplicationController
     end
     success_count = 0
     error_count = 0
-    doc = Nokogiri::HTML.parse(params[:file])
+    doc = Nokogiri::HTML(params[:file]) do |config|
+      config.nonet.noblanks.nocdata.noent.huge
+    end
     doc.css('a').each do |link|
       post = Post.new
       post.title = link.content

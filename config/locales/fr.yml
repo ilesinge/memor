@@ -21,7 +21,7 @@ fr:
         url: 'URL'
   time:
     formats:
-      default: '%-d %B %Y'
+      date: '%-d %B %Y'
   edit: 'Modifier'
   delete: 'Supprimer'
   save: 'Enregistrer'

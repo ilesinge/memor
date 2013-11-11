@@ -35,7 +35,7 @@ en:
         url: 'URL'
   time:
     formats:
-      default: '%B %-d, %Y'
+      date: '%B %-d, %Y'
   edit: 'Edit'
   delete: 'Supprimer'
   save: 'Save'

@@ -23,7 +23,7 @@ en:
   import: "Import"
   login: "Sign in"
   search: "Search"
-  logout: "Se déconnecter"
+  logout: "Sign out"
   by: "by"
   tagged_with: 'tagged with "%{tag}"'
   new_post: "New post"

@@ -24,8 +24,13 @@ Planned features
 Screenshots
 -----------
 
+Main Memor view:
 ![Main Memor view](http://www.ndre.gr/memor/memor1.png "Main Memor view")
+
+Bookmark detail:
 ![Bookmark detail](http://www.ndre.gr/memor/memor2.png "Bookmark detail")
+
+On a small screen:
 ![On a small screen](http://www.ndre.gr/memor/memor3.png "On a small screen")
 
 Technology

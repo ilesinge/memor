@@ -48,7 +48,7 @@ bundle install
 ```sh
 rake db:migrate
 ```
-OR if you're doing a production install
+OR if you're doing a production install:
 ```sh
 RAILS_ENV=production rake db:migrate
 ```
@@ -57,18 +57,18 @@ RAILS_ENV=production rake db:migrate
 # Prepend with 'RAILS_ENV=production' if needed
 rake db:seed
 ```
-OR
+8. Precompile assets if you're doing a production install:
 ```sh
-RAILS_ENV=production rake db:seed
+RAILS_ENV=production rake assets:precompile
 ```
-8. Start the server:
+9. Start the server:
 ```sh
 # Prepend with 'RAILS_ENV=production' if needed
 rails s
 ```
-9. Launch http://localhost:3000/ in your browser
-10. Connect with user `administrator`, password `memorFTW!`
-11. Access http://localhost:3030/users/administrator/edit to change admin password (and username if you want)
+10. Launch http://localhost:3000/ in your browser
+11. Connect with user `administrator`, password `memorFTW!`
+12. Access http://localhost:3030/users/administrator/edit to change admin password (and username if you want)
 
 Et voilà !
 

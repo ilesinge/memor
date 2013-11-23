@@ -17,3 +17,9 @@
 
 # Secret token file
 .secret
+
+# Database configuration
+config/database.yml
+
+# SQLite database
+db/*.sqlite3

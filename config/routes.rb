@@ -6,6 +6,7 @@ Default::Application.routes.draw do
   
   get :import, to: 'import#index'
   post :import, to: 'import#start'
+  post :export, to: 'export#index'
   
   resources :users, path: 'users'
   

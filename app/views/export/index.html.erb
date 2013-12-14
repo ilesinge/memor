@@ -1,0 +1,10 @@
+<!DOCTYPE NETSCAPE-Bookmark-file-1>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+<TITLE><%= t 'export_title', username: @current_user.username %></TITLE>
+<H1 LAST_MODIFIED="<%= @now %>"><%= t 'export_title', username: @current_user.username %></H1>
+<DL>
+  <% @posts.each do |post| %>
+    <DT><A HREF="<%= post.url %>" description="<%= post.description %>" tags="<%= post.tag_list %>" ADD_DATE="<%= post.created_at.to_i %>" LAST_MODIFIED="<%= post.updated_at.to_i %>"><%= post.title %></a>
+    <DD><%= post.description %>
+  <% end %>
+</DL>

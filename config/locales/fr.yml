@@ -1,5 +1,6 @@
 fr:
   import: "Importer"
+  export: "Exporter"
   login: "Se connecter"
   search: "Recherche"
   logout: "Se déconnecter"
@@ -61,3 +62,4 @@ fr:
   user_updated: "L'utilisateur a bien été mis à jour."
   cannot_delete_yourself: 'Vous ne pouvez pas vous supprimer.'
   user_deleted: "L'utilisateur a bien été supprimé."
+  export_title: 'Liens de %{username} sur Memor'

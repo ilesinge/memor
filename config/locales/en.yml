@@ -21,6 +21,7 @@
 
 en:
   import: "Import"
+  export: "Export"
   login: "Sign in"
   search: "Search"
   logout: "Sign out"
@@ -75,3 +76,4 @@ en:
   user_updated: 'User was successfully updated.'
   cannot_delete_yourself: 'You cannot delete yourself.'
   user_deleted: 'User was successfully destroyed.'
+  export_title: "%{username}'s bookmarks from Memor"

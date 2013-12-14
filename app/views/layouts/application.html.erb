@@ -35,7 +35,8 @@
 						})();"
 				%>
 				<%= menu_item t('import'), import_path %>
-		  		<%= menu_item t('logout'), destroy_user_session_path, :method => :delete %>        
+				<%= menu_item t('export'), export_path, :method => :post %>
+				<%= menu_item t('logout'), destroy_user_session_path, :method => :delete %>        
 			<% else %>
 		  		<%= menu_item t('login'), new_user_session_path %>
 			<% end %>

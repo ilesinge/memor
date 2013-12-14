@@ -1,5 +1,7 @@
 class ImportController < ApplicationController
   
+  before_action :check_access
+  
   require 'nokogiri'
   
   # GET /import
@@ -41,6 +43,16 @@ class ImportController < ApplicationController
       flash[:warning] = I18n.t('import_failure', count: error_count)
     end
     redirect_to import_path
+  end
+  
+  private
+  
+  def check_access
+    if current_user.nil?
+      flash[:error] = t('no_access')
+      redirect_to :root
+      return false
+    end
   end
   
 end

@@ -9,7 +9,7 @@ Features
 * Multi-user
 * Responsive design (usable on mobile)
 * Grouping of bookmarks based on tags
-* Import browser-format bookmarks file
+* Import/Export browser-format bookmarks file
 * Quick posting with bookmarklet
 * I18n (available locales : English, French)
 

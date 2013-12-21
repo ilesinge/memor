@@ -21,6 +21,8 @@ class PostsController < ApplicationController
     end
     @posts = post_model
     
+    @tags = post_model.tag_counts_on(:tags)
+    
     respond_to do |format|
       format.html
       format.atom { render :layout => false } #index.atom.builder

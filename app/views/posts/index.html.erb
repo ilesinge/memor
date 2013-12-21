@@ -8,18 +8,32 @@
 	<%= link_to glyph('rss'), {format: 'atom'}, class: "btn btn-warning" %>
 </h2>
 
-<% if !@posts.empty? %>
-
-<% if user_signed_in? %>
-	<%= link_to glyph('plus') + ' ' + t('new_post'), new_post_path, class: "btn btn-success  new_button_list" %>
-<% end %>
-
-<%= render 'list' %>
-
-<%= paginate @posts %>
-
-<% end %>
-
-<% if user_signed_in? %>
-	<%= link_to glyph('plus') + ' ' + t('new_post'), new_post_path, class: "btn btn-success  new_button_list" %>
-<% end %>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span10">
+      <% if !@posts.empty? %>
+      
+      <% if user_signed_in? %>
+      	<%= link_to glyph('plus') + ' ' + t('new_post'), new_post_path, class: "btn btn-success  new_button_list" %>
+      <% end %>
+      
+      <%= render 'list' %>
+      
+      <%= paginate @posts %>
+      
+      <% end %>
+      
+      <% if user_signed_in? %>
+      	<%= link_to glyph('plus') + ' ' + t('new_post'), new_post_path, class: "btn btn-success  new_button_list" %>
+      <% end %>
+    </div>
+    
+    <div class="span2">
+      <ul id="tagcloud">
+      <% tag_cloud(@tags, %w(cloud1 cloud2 cloud3 cloud4)) do |tag, css_class| %>
+        <li><%= link_to tag.name, tag_posts_path(tag.name), :class => css_class %></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

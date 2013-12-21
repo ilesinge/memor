@@ -18,7 +18,7 @@
 		
 		<%= menu_group :pull => :right do %>
 		    
-		    <form class="navbar-form pull-left" method="get" action="/">
+		    <form class="navbar-form pull-left" method="get" action="<%= filter_link_without :q %>">
 		    	<input name="q" placeholder="<%= t 'search' %>" type="text" class="input-medium search-query">
 		    	<button type="submit" class="btn btn-inverse"><%= glyph('search') %></button>
 		    </form>

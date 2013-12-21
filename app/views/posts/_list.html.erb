@@ -5,11 +5,11 @@
       	<td><%= link_to post.title, post %>
       		<%= link_to glyph('external-link'), post.url, title: post.title %>
       		<br/>
-      		<small>(<%= t('posted_by')%> <%= link_to post.user.username, user_posts_path(post.user) %> <%= t('on_date', date: l(post.created_at, format: :date)) %>)</small>
+      		<small>(<%= t('posted_by')%> <%= link_to post.user.username, filter_link_with(:user, post.user) %> <%= t('on_date', date: l(post.created_at, format: :date)) %>)</small>
       	</td>
       	<td><%= post.description %></td>
       	<td class="tags"><% post.tag_list.each do |tag|%>
-				<%= link_to tag, tag_posts_path(tag), class: "btn btn-primary" %>
+				<%= link_to tag, filter_link_with(:tag, tag), class: "btn btn-primary" %>
 			<% end %></td>
 		<% if user_signed_in? %>
         <td>

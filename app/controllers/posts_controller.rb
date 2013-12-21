@@ -6,22 +6,8 @@ class PostsController < ApplicationController
 
   # GET /
   def index
-    post_model = Post.order(:created_at).reverse_order.page params[:page]
-    if (params['user_id'])
-      @user = params['user_id']
-      post_model = post_model.joins(:user).where('users.username' => params['user_id'])
-    end
-    if (params['tag_id'])
-      @tag = params['tag_id']
-      post_model = post_model.tagged_with(params['tag_id'])
-    end
-    if (params['q'])
-      q = "%#{params['q']}%"
-      post_model = post_model.where("title like ? or description like ?", q, q)
-    end
-    @posts = post_model
-    
-    @tags = post_model.tag_counts_on(:tags)
+    @filters, @posts = get_filters(params)
+    @tags = @posts.tag_counts_on(:tags)
     
     respond_to do |format|
       format.html
@@ -121,6 +107,28 @@ class PostsController < ApplicationController
       if !existing_post.nil? and existing_post.id != post_params['id']
         flash.now[:warning] = I18n.t('existing_post') + ' <a class="alert-link" href="' + url_for(existing_post) + '">' + h(existing_post.title) + '</a>'
       end
+    end
+    
+    def get_filters(params)
+      filters = {:tags => []}
+      post_model = Post.order(:created_at).reverse_order.page params[:page]
+      if (params['user_id'])
+        post_model = post_model.joins(:user).where('users.username' => params['user_id'])
+        filters[:user] = params['user_id'] 
+      end
+      if (params['tag_id'])
+        tags = params['tag_id'].split(',')
+        tags.each do |tag|
+          post_model = post_model.tagged_with(tag)
+          filters[:tags].append(tag) 
+        end
+      end
+      if (params['q'])
+        q = "%#{params['q']}%"
+        post_model = post_model.where("title like ? or description like ?", q, q)
+        filters[:q] = params['q'] 
+      end
+      return filters, post_model
     end
     
 end

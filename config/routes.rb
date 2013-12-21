@@ -15,6 +15,9 @@ Default::Application.routes.draw do
   
   resources :users, only: [], path: 'user' do
     get :posts, path: '/', controller: :posts, action: :index
+    resources :tags, only: [], path: 'tag' do
+      get :posts, path: '/', controller: :posts, action: :index
+    end
   end
   
   resources :tags, only: [], path: 'tag' do

@@ -1,16 +1,27 @@
-<h2><%= page_entries_info @posts %>
-<% if @user %>
-	<%= t('by', count: @posts.count) %> <%= @user %>
-<% end %>
-<% if @tag %>
-	<%= t('tagged_with', count: @posts.count, tag: @tag) %>
-<% end %>
+<h2>
+  <%= page_entries_info @posts %>
 	<%= link_to glyph('rss'), {format: 'atom'}, class: "btn btn-warning" %>
 </h2>
 
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span10">
+    
+      <% if @filters != {:tags => []} %>
+        <div id="filters">
+          <%= t 'filters' %> 
+          <% if @filters[:user] %>
+            <%= link_to @filters[:user] + ' ×', filter_link_without(:user), class: "btn btn-primary" %>
+          <% end %>
+          <% if @filters[:q] %>
+            <%= link_to @filters[:q] + ' ×', filter_link_without(:q), class: "btn btn-primary" %>
+          <% end %>
+          <% @filters[:tags].each do |tag| %>
+            <%= link_to tag + ' ×', filter_link_without(:tag, tag), class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      <% end %>
+    
       <% if !@posts.empty? %>
       
       <% if user_signed_in? %>
@@ -31,7 +42,7 @@
     <div class="span2">
       <ul id="tagcloud">
       <% tag_cloud(@tags, %w(cloud1 cloud2 cloud3 cloud4)) do |tag, css_class| %>
-        <li><%= link_to tag.name, tag_posts_path(tag.name), :class => css_class %></li>
+        <li><%= link_to tag.name, filter_link_with(:tag, tag.name), :class => css_class %></li>
       <% end %>
       </ul>
     </div>

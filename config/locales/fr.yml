@@ -4,11 +4,6 @@ fr:
   login: "Se connecter"
   search: "Recherche"
   logout: "Se déconnecter"
-  by: "par"
-  tagged_with:
-    zero: "avec l'étiquette « %{tag} »"
-    one: "étiqueté « %{tag} »"
-    other: 'étiquetés « %{tag} »'
   new_post: "Nouveau lien"
   posted_by: "publié par"
   on_date: "le %{date}"
@@ -63,3 +58,4 @@ fr:
   cannot_delete_yourself: 'Vous ne pouvez pas vous supprimer.'
   user_deleted: "L'utilisateur a bien été supprimé."
   export_title: 'Liens de %{username} sur Memor'
+  filters: 'Filtres :'

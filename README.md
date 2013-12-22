@@ -11,12 +11,12 @@ Features
 * Grouping of bookmarks based on tags
 * Import/Export browser-format bookmarks file
 * Quick posting with bookmarklet
+* Filter with multiple criteria (tags, user, search)
 * I18n (available locales : English, French)
 
 Planned features
 ----------------
 
-* Export bookmarks
 * Tag management (rename, merge, delete)
 * Commenting system
 * REST API

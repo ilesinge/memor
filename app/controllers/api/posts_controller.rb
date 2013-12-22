@@ -1,4 +1,4 @@
-class Api::PostController < Api::ApiController
+class Api::PostsController < Api::ApiController
   
   def all
     @posts = current_user.posts
@@ -9,6 +9,11 @@ class Api::PostController < Api::ApiController
     respond_to do |format|
       format.xml
     end
+  end
+  
+  def add
+    request.format = :html
+    render status: :bad_request, :text => 'URL missing'
   end
   
 end

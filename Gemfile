@@ -7,8 +7,8 @@ gem 'rails', '~> 4.0'
 gem 'rails-i18n', '~> 4.0.0'
 
 # Sqlite or MySQL database for Active Record
-#gem 'mysql2'
-gem 'sqlite3'
+gem 'mysql2'
+#gem 'sqlite3'
 
 # LESS CSS
 gem "less-rails", '>= 2.3.2'

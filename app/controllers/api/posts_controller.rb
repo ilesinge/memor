@@ -1,13 +1,10 @@
 class Api::PostsController < Api::ApiController
   
   def all
-    @posts = current_user.posts
-    if params[:tag]
+    @posts = current_user.posts.order(created_at: :desc)
+    if params[:tag] and !params[:tag].empty?
       @tag = params[:tag]
       @posts = @posts.tagged_with(@tag)
-    end
-    respond_to do |format|
-      format.xml
     end
   end
   

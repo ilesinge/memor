@@ -10,6 +10,15 @@ Default::Application.routes.draw do
   
   resources :users, path: 'users'
   
+  namespace :api do
+    get :post_add, path: '/post/add', to: 'post#add'
+    get :post_add_dep, path: '/post_add.php', to: 'post#add'
+    get :post_all, path: '/post/all', to: 'post#all'
+    get :post_all_dep, path: '/post_all.php', to: 'post#all'
+    get :post_delete, path: '/post/delete', to: 'post#delete'
+    get :post_delete, path: '/post_delete.php', to: 'post#delete'
+  end
+  
   resources :posts, path: '/'
   root 'posts#index'
   

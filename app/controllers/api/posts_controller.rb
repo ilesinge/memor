@@ -9,8 +9,38 @@ class Api::PostsController < Api::ApiController
   end
   
   def add
-    request.format = :html
-    render status: :bad_request, :text => 'URL missing'
+    replace = (params[:replace] == 'yes')
+    proceed = false
+    
+    if !params[:url] or params[:url].empty?
+      @code = 'URL missing'
+      render 'result', status: :bad_request
+    elsif !params[:description] or params[:description].empty?
+      @code = 'Description missing'
+      render 'result', status: :bad_request
+    else
+      post = Post.where('url' => params[:url]).first
+      if !post.nil?
+        if !replace
+          @code = 'bookmark does already exist'
+          render 'result', status: :conflict
+        else
+          proceed = true
+        end
+      else
+        post = Post.new
+        proceed = true
+      end
+      if proceed
+        post.url = params[:url]
+        post.title = params[:description]
+        post.description = params[:extended]
+        post.tags = params[:tags].split(' ')
+        post.save!
+        @code = 'done'
+        render 'result'
+      end
+    end
   end
   
 end

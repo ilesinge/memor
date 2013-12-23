@@ -38,8 +38,12 @@ class Api::PostsController < Api::ApiController
         post.url = params[:url]
         post.title = params[:description]
         post.description = params[:extended]
+        if params[:tags]
+          post.tags = params[:tags].split(' ')
+        else
+          post.tags = []
+        end
         post.user = current_user
-        post.tags = params[:tags].split(' ')
         post.save!
         @code = 'done'
         render 'result'

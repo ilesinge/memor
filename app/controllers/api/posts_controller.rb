@@ -1,7 +1,7 @@
 class Api::PostsController < Api::ApiController
   
   def all
-    @posts = current_user.posts.order(created_at: :desc)
+    @posts = current_user.posts.includes(:tags, :user).order(created_at: :desc)
     if params[:tag] and !params[:tag].empty?
       @tag = params[:tag]
       @posts = @posts.tagged_with(@tag)

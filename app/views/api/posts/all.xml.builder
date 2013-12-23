@@ -5,7 +5,7 @@ xml.posts('update' => DateTime.now.xmlschema, 'user' => current_user.username, '
       'description' => post.title,
       'extended' => post.description,
       'hash' => Digest::MD5.hexdigest(post.url),
-      'tag' => post.tag_list.join(' '),
+      'tag' => post.tags.join(' '),
       'time' => post.created_at.xmlschema)
   end
 }

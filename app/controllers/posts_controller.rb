@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   # GET /
   def index
     @filters, @posts = get_filters(params)
+    @posts = @posts.includes(:tags, :user)
     @tags = @posts.tag_counts_on(:tags)
     
     respond_to do |format|

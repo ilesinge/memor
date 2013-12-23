@@ -36,9 +36,9 @@ class Api::PostsController < Api::ApiController
         post.title = params[:description]
         post.description = params[:extended]
         if params[:tags]
-          post.tags = params[:tags].split(' ')
+          post.tag_list = params[:tags].split(' ')
         else
-          post.tags = []
+          post.tag_list = []
         end
         post.user = current_user
         post.save!

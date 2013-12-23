@@ -11,12 +11,12 @@ Default::Application.routes.draw do
   resources :users, path: 'users'
   
   namespace :api do
-    get :posts_add, path: '/posts/add', to: 'posts#add'
-    get :posts_add_dep, path: '/posts_add.php', to: 'posts#add'
+    match :posts_add, path: '/posts/add', to: 'posts#add', via: [:get, :post]
+    match :posts_add_dep, path: '/posts_add.php', to: 'posts#add', via: [:get, :post]
     get :posts_all, path: '/posts/all', to: 'posts#all'
     get :posts_all_dep, path: '/posts_all.php', to: 'posts#all'
-    get :posts_delete, path: '/posts/delete', to: 'posts#delete'
-    get :posts_delete_dep, path: '/posts_delete.php', to: 'posts#delete'
+    match :posts_delete, path: '/posts/delete', to: 'posts#delete', via: [:get, :post]
+    match :posts_delete_dep, path: '/posts_delete.php', to: 'posts#delete', via: [:get, :post]
   end
   
   resources :posts, path: '/'

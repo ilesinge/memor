@@ -9,6 +9,9 @@ class Api::PostsController < Api::ApiController
   end
   
   def add
+    if request.post?
+      params = post_params
+    end
     replace = (params[:replace] == 'yes')
     proceed = false
     

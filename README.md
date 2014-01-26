@@ -13,13 +13,15 @@ Features
 * Quick posting with bookmarklet
 * Filter with multiple criteria (tags, user, search)
 * I18n (available locales : English, French)
+* REST API (partial implementation of delicious.com / Semantic Scuttle API)
+* Compatible with [Scuttloid](https://github.com/ilesinge/scuttloid) Android App (although the privacy status of a bookmark is meaningless in Memor)
 
 Planned features
 ----------------
 
 * Tag management (rename, merge, delete)
 * Commenting system
-* REST API
+* More REST API features
 
 Screenshots
 -----------

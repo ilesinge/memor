@@ -17,6 +17,7 @@ Default::Application.routes.draw do
     get :posts_all_dep, path: '/posts_all.php', to: 'posts#all'
     match :posts_delete, path: '/posts/delete', to: 'posts#delete', via: [:get, :post]
     match :posts_delete_dep, path: '/posts_delete.php', to: 'posts#delete', via: [:get, :post]
+    get :posts_update, path: '/posts/update', to: 'posts#update'
   end
   
   resources :posts, path: '/'

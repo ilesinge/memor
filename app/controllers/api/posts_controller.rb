@@ -48,4 +48,12 @@ class Api::PostsController < Api::ApiController
     end
   end
   
+  def update
+	@post = current_user.posts.order(created_at: :desc).last
+	if @post.nil?
+		@post = Post.new
+		@post.updated_at = DateTime.parse('1970-01-01 00:00:00 UTC')
+	end
+  end
+  
 end

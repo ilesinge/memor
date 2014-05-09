@@ -56,4 +56,16 @@ class Api::PostsController < Api::ApiController
 	end
   end
   
+  def delete
+	post = current_user.posts.find_by(url: params[:url])
+	if post
+		post.destroy!
+		@code = 'done'
+		render 'result'
+	else
+		request.format = :html
+		render :text => "item not found", :status => 404, :content_type => 'text/plain'
+	end
+  end
+  
 end
